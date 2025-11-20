@@ -1,0 +1,1734 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instant fondu boutique en ligne | Fromage, dosettes & machines</title>
+    <meta name="description" content="Découvrez la gamme variée Préparez votre Fromage préféré : raclette, mozarella, chère etc.. ✓ Commandez en ligne ✓ Sans doute le meilleur fromage du monde.">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<style>
+    @import url('https://ext.same-assets.com/2209977357/2284256206.woff2');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --gold: #d4bb8e;
+            --dark-gold: #b8a07a;
+            --black: #0a0a0a;
+            --dark-gray: #1a1a1a;
+            --medium-gray: #2a2a2a;
+            --light-gray: #999;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Avenir Next', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background-color: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+        }
+
+        /* Cookie Modal */
+        .cookie-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+        }
+
+        .cookie-content {
+            background: white;
+            color: #333;
+            padding: 40px;
+            max-width: 600px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        .cookie-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 32px;
+            cursor: pointer;
+            color: #333;
+        }
+
+        .cookie-content h2 {
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .cookie-content p {
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        .cookie-content a {
+            color: #0066cc;
+            text-decoration: underline;
+        }
+
+        .cookie-buttons {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn-primary {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 12px 24px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-primary:hover {
+            background: var(--dark-gold);
+        }
+
+        .btn-secondary {
+            background: white;
+            color: var(--black);
+            border: 2px solid var(--gold);
+            padding: 12px 24px;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: all 0.3s;
+        }
+
+        .btn-secondary:hover {
+            background: #f5f5f5;
+        }
+
+        /* Top Banner */
+        .top-banner {
+            background: var(--medium-gray);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+            padding: 12px 20px;
+            font-size: 13px;
+        }
+
+        .banner-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .banner-item svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Header */
+        .header {
+            background: var(--dark-gray);
+            padding: 20px 0;
+            border-bottom: 1px solid var(--medium-gray);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+        }
+
+        .lor-logo {
+            font-size: 32px;
+            font-weight: 300;
+            font-style: italic;
+            color: var(--gold);
+            letter-spacing: 2px;
+        }
+
+        .search-bar {
+            flex: 1;
+            display: flex;
+            background: var(--black);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .search-bar input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            padding: 12px 16px;
+            color: var(--white);
+            outline: none;
+        }
+
+        .search-bar input::placeholder {
+            color: var(--light-gray);
+        }
+
+        .search-bar button {
+            background: transparent;
+            border: none;
+            padding: 0 16px;
+            color: var(--white);
+            cursor: pointer;
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+
+        .icon-btn {
+            background: transparent;
+            border: none;
+            color: var(--white);
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            font-size: 12px;
+            transition: color 0.3s;
+        }
+
+        .icon-btn:hover {
+            color: var(--gold);
+        }
+
+        .lang-btn {
+            background: transparent;
+            border: 1px solid var(--light-gray);
+            color: var(--white);
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        /* Navigation */
+        .nav {
+            background: var(--dark-gray);
+            border-bottom: 1px solid var(--medium-gray);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            gap: 32px;
+            overflow-x: auto;
+        }
+
+        .nav-link {
+            color: var(--white);
+            text-decoration: none;
+            padding: 16px 0;
+            white-space: nowrap;
+            font-size: 14px;
+            font-weight: 500;
+            transition: color 0.3s;
+            border-bottom: 3px solid transparent;
+        }
+
+        .nav-link:hover {
+            color: var(--gold);
+        }
+
+        .nav-link.highlight {
+            color: var(--gold);
+            border-bottom-color: var(--gold);
+        }
+
+        /* Hero Section */
+        .hero {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 60px 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 24px;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .hero-content p {
+            font-size: 20px;
+            margin-bottom: 32px;
+            color: var(--light-gray);
+            line-height: 1.5;
+        }
+
+        .btn-gold {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 16px 32px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            border-radius: 4px;
+        }
+
+        .btn-gold:hover {
+            background: var(--dark-gold);
+            transform: translateY(-2px);
+        }
+
+        .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Offers Section */
+        .offers {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .offers h2 {
+            font-size: 36px;
+            margin-bottom: 32px;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .offers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-bottom: 24px;
+        }
+
+        .offer-card {
+            background: linear-gradient(135deg, var(--medium-gray) 0%, var(--dark-gray) 100%);
+            padding: 40px;
+            border-radius: 8px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .offer-card h3 {
+            font-size: 24px;
+            margin-bottom: 16px;
+            font-weight: 500;
+        }
+
+        .offer-card p {
+            color: var(--light-gray);
+            margin-bottom: 24px;
+        }
+
+        .btn-arrow {
+            background: var(--gold);
+            border: none;
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            color: var(--black);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-arrow:hover {
+            background: var(--dark-gold);
+            transform: scale(1.1);
+        }
+
+        .link-underline {
+            color: var(--white);
+            text-decoration: underline;
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+        }
+
+        /* Categories Section */
+        .categories {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .categories h2 {
+            font-size: 36px;
+            margin-bottom: 48px;
+            font-weight: 300;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+        }
+
+        .category-card {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .category-card:hover {
+            transform: scale(1.05);
+        }
+
+        .category-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+        }
+
+        .category-card h3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            padding: 24px 16px 16px;
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        /* Promo Sections */
+        .promo-sections {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .promo-card {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            margin-bottom: 48px;
+            background: var(--dark-gray);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .promo-text {
+            padding: 48px;
+        }
+
+        .promo-text h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .promo-text p {
+            color: var(--light-gray);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        .promo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Featured Product */
+        .featured-product {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .product-info h2 {
+            font-size: 42px;
+            margin-bottom: 32px;
+            font-weight: 300;
+        }
+
+        .features {
+            margin-bottom: 32px;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .feature svg {
+            flex-shrink: 0;
+            margin-top: 4px;
+        }
+
+        .product-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+
+        /* Latest Creations */
+        .latest-creations {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .latest-creations h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+
+        .subtitle {
+            color: var(--light-gray);
+            margin-bottom: 48px;
+            font-size: 16px;
+        }
+
+        .products-carousel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .product-card {
+            background: var(--dark-gray);
+            border-radius: 8px;
+            padding: 24px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .badge {
+            position: absolute;
+            top: 16px;
+            left: 16px;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        .badge.discount {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .badge.new {
+            background: var(--gold);
+            color: var(--black);
+        }
+
+        .product-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: contain;
+            margin-bottom: 16px;
+        }
+
+        .product-card h3 {
+            font-size: 18px;
+            margin-bottom: 12px;
+            font-weight: 500;
+        }
+
+        .rating {
+            color: var(--gold);
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .rating span {
+            color: var(--light-gray);
+            margin-left: 8px;
+        }
+
+        .product-desc {
+            color: var(--light-gray);
+            font-size: 14px;
+            margin-bottom: 16px;
+        }
+
+        .price {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .old-price {
+            text-decoration: line-through;
+            color: var(--light-gray);
+            font-size: 14px;
+        }
+
+        .new-price {
+            font-size: 20px;
+            font-weight: bold;
+            color: var(--white);
+        }
+
+        .btn-add {
+            background: var(--gold);
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            color: var(--black);
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: absolute;
+            bottom: 24px;
+            right: 24px;
+        }
+
+        .btn-add:hover {
+            background: var(--dark-gold);
+            transform: scale(1.1);
+        }
+
+        /* Sustainability Section */
+        .sustainability {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 20px;
+        }
+
+        .sustainability h2 {
+            font-size: 36px;
+            margin-bottom: 48px;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .sustainability-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 32px;
+        }
+
+        .sustainability-card {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .sustainability-card img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+
+        .sustainability-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .sustainability-card .label {
+            position: absolute;
+            top: 24px;
+            left: 24px;
+            background: var(--gold);
+            color: var(--black);
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 12px;
+        }
+
+        .sustainability-card h3 {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.95), transparent);
+            padding: 48px 24px 24px;
+            font-size: 24px;
+            font-weight: 300;
+        }
+
+        /* Blog Section */
+        .blog-section {
+            max-width: 1400px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .blog-images {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px;
+        }
+
+        .blog-images img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+
+        .blog-content h2 {
+            font-size: 36px;
+            margin-bottom: 24px;
+            font-weight: 300;
+        }
+
+        .blog-content p {
+            color: var(--light-gray);
+            margin-bottom: 32px;
+            line-height: 1.7;
+        }
+
+        /* Newsletter */
+        .newsletter {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        .newsletter h2 {
+            font-size: 36px;
+            margin-bottom: 16px;
+            font-weight: 300;
+        }
+
+        .newsletter p {
+            color: var(--light-gray);
+            margin-bottom: 32px;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+            padding: 14px 40px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+
+        .btn-outline:hover {
+            background: var(--white);
+            color: var(--black);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--dark-gray);
+            padding: 60px 20px 20px;
+            border-top: 1px solid var(--medium-gray);
+        }
+
+        .footer-top {
+            max-width: 1400px;
+            margin: 0 auto 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .payment-methods {
+            display: flex;
+            gap: 16px;
+        }
+
+        .payment-methods img {
+            height: 32px;
+        }
+
+        .footer-links {
+            max-width: 1400px;
+            margin: 0 auto 48px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 48px;
+        }
+
+        .footer-column h3 {
+            font-size: 14px;
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+
+        .footer-column ul li a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--white);
+        }
+
+        .footer-bottom {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 32px;
+            border-top: 1px solid var(--medium-gray);
+            text-align: center;
+            color: var(--light-gray);
+            font-size: 13px;
+        }
+
+        .footer-bottom p {
+            margin-bottom: 12px;
+        }
+
+        .footer-bottom-links {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin: 24px 0;
+            flex-wrap: wrap;
+        }
+
+        .footer-bottom-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-bottom-links a:hover {
+            color: var(--white);
+        }
+
+        .language-selector {
+            margin-top: 24px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero,
+            .promo-card,
+            .featured-product,
+            .blog-section {
+                grid-template-columns: 1fr;
+            }
+
+            .categories-grid,
+            .products-carousel {
+                grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            }
+        }
+
+        @media (max-width: 768px) {
+            .top-banner {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            .search-bar {
+                order: 3;
+                width: 100%;
+            }
+
+            .nav-container {
+                gap: 16px;
+            }
+
+            .hero-content h1 {
+                font-size: 36px;
+            }
+
+            .offers-grid,
+            .sustainability-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+
+            .promo-text {
+                padding: 32px 24px;
+            }
+
+            .promo-text h2,
+            .blog-content h2 {
+                font-size: 28px;
+            }
+        }
+</style>
+
+
+<body>
+    <!-- Cookie Modal -->
+    <div id="cookieModal" class="cookie-modal">
+        <div class="cookie-content">
+            <button class="cookie-close" onclick="closeCookieModal()">&times;</button>
+            <h2>Cookies</h2>
+            <p>JDE et des tiers utilisent des cookies et des technologies similaires pour fournir et améliorer nos services en ligne, analyser l'utilisation du site et l'efficacité de nos campagnes marketing et vous afficher des contenus, produits, services et publicités pertinents. En cliquant sur « Accepter tous les cookies », vous acceptez que ces cookies soient déposés et puissent peuvent être transférés vers d'autres pays ayant un niveau de protection des données différent. <a href="#">Pour en savoir plus sur la protection de votre vie privée</a></p>
+            <div class="cookie-buttons">
+                <button class="btn-secondary" onclick="closeCookieModal()">GÉRER LES COOKIES</button>
+                <button class="btn-secondary" onclick="closeCookieModal()">TOUT REJETER</button>
+                <button class="btn-primary" onclick="acceptCookies()">TOUT ACCEPTER</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Top Banner -->
+    <div class="top-banner">
+        <div class="banner-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0L9.5 5.5H15L10.5 9L12 14.5L8 11L4 14.5L5.5 9L1 5.5H6.5L8 0Z"/></svg>
+            <span>Prêt à être expédié sous 1 à 3 jours</span>
+        </div>
+        <div class="banner-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1C4.1 1 1 4.1 1 8s3.1 7 7 7 7-3.1 7-7-3.1-7-7-7zm0 12c-2.8 0-5-2.2-5-5s2.2-5 5-5 5 2.2 5 5-2.2 5-5 5z"/></svg>
+            <span>Fromage de qualité</span>
+        </div>
+        <div class="banner-item">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M1 4h14v2H1V4zm0 4h14v2H1V8zm0 4h14v2H1v-2z"/></svg>
+            <span>Livraison offerte à partir de 30 €</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="header-container">
+            <div class="logo">
+                <span class="lor-logo">Instant fondu</span>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Rechercher">
+                <button><svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor"><circle cx="8" cy="8" r="6" stroke="currentColor" fill="none" stroke-width="2"/><path d="M12 12l6 6" stroke="currentColor" stroke-width="2"/></svg></button>
+            </div>
+            <div class="header-actions">
+                <button class="icon-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 12c2.2 0 4-1.8 4-4s-1.8-4-4-4-4 1.8-4 4 1.8 4 4 4zm0 2c-2.7 0-8 1.3-8 4v2h16v-2c0-2.7-5.3-4-8-4z"/></svg>
+                    <span>Mon Compte</span>
+                </button>
+                <button class="icon-btn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm10 0c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm-9.8-3.2c0 .1.1.2.2.2H19v-2H7l-.9-2H19c.7 0 1.4-.4 1.7-1l3.9-7-.9-.5c-.3-.2-.7-.2-1-.2H5.2L4.3 2H1v2h2l3.6 7.6L5.2 14c-.1.3-.2.6-.2.9 0 1.1.9 2 2 2h12v-2H7.4c-.1 0-.2-.1-.2-.2z"/></svg>
+                    <span>Panier</span>
+                </button>
+                <button class="lang-btn">FR</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-link highlight">Black Friday</a>
+            <a href="#" class="nav-link">Capsules</a>
+            <a href="#" class="nav-link">Machines</a>
+            <a href="#" class="nav-link">Coffret</a>
+            <a href="#" class="nav-link">Instant fondu s'engage</a>
+            <a href="#" class="nav-link">L'Univers Instant fondu</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Sélection Instant fondu</h1>
+            <p>Des offres à savourer,<br>juste pour le Black Friday</p>
+            <button class="btn-gold">Je découvre →</button>
+        </div>
+        <div class="hero-image">
+            <img src="Design sans titre-Photoroom.png" alt="machine capsulait">
+        </div>
+    </section>
+
+    <!-- Offers Section -->
+    <section class="offers">
+        <h2>Offres Capsulait</h2>
+        <div class="offers-grid">
+            <div class="offer-card">
+                <h3>Jusqu'à 30% de réduction</h3>
+                <p>sur une sélection de lots de capsules de fromage Instant fondu</p>
+                <button class="btn-arrow">→</button>
+            </div>
+            <div class="offer-card">
+                <h3>Jusqu'à 25% de réduction</h3>
+                <p>sur une sélection de fromage Instant fondu</p>
+                <button class="btn-arrow">→</button>
+            </div>
+        </div>
+        <a href="#" class="link-underline">Voir les détails de l'offre</a>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories">
+        <h2>Découvrez nos catégories</h2>
+        <div class="categories-grid">
+            <div class="category-card">
+                <img src="CAPSULAIT.png" alt="Capsules">
+                <h3>Capsules</h3>
+            </div>
+            <div class="category-card">
+                <img src="IMG_1899.JPG" alt="Machines">
+                <h3>Machines</h3>
+            </div>
+            <div class="category-card">
+                <img src="download.jpg" alt="Grands Formats">
+                <h3>Grands Formats</h3>
+            </div>
+            <div class="category-card">
+                <img src="nos-capsules-de-cafe-biodegradables-et-compostables-574280_600x.png">
+                <h3>Packs Variétés</h3>
+            </div>
+            <div class="category-card">
+                <img src="charcoal-cheese.jpg" alt="fuck">
+                <h3>Fromage</h3>
+            </div>
+            <div class="category-card">
+                <img src="146201_1.jpg.thumb.jpg" alt="Accessoires">
+                <h3>Accessoires</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promo Sections -->
+    <section class="promo-sections">
+        <div class="promo-card promo-left">
+            <div class="promo-text">
+                <h2>Savourez l'excellence à prix exceptionnel</h2>
+                <p>Profitez d'offres exclusives sur nos machines Capsulait, Original, Absolu, Créatif et Alessi. Le fromage parfait, à votre style et à votre goût.</p>
+                <p>l'appareil Capsulait : une machine élégante et intuitive qui transforme les capsules en fromage prêt à déguster.</p>
+                <button class="btn-gold">J'en profite →</button>
+            </div>
+            <div class="promo-image">
+                <img src="ChatGPT Image 13 nov. 2025, 03_14_32.png" alt="Machines Capsulait">
+            </div>
+        </div>
+
+
+
+
+        <div class="promo-card promo-right">
+            <div class="promo-image">
+                <img src="Black Friday 2025 SB1-Photoroom.jpg" alt="Sélection de saison">
+            </div>
+            <div class="promo-text">
+                <h2>Notre sélection de saison</h2>
+                <p>Calendrier de l'Avent, Pumpkin Spice, Popping Pearls : célébrez la saison avec les éditions limitées Capsulait.</p>
+                <button class="btn-gold">Je découvre →</button>
+            </div>
+        </div>
+
+    </section>
+
+
+<style>
+    h2 {font-size: 36px; margin-bottom: 48px; font-weight: 300;}             
+</style>
+    
+
+
+
+<section class="products-section">
+  <h2>Nos Coffrets Instant Fondu</h2>
+  <p class="subtitle">
+    Découvrez nos coffrets de fromages fondus livrés chaque mois dans des emballages écoresponsables.
+  </p>
+
+  <div class="products-grid">
+
+    <!-- CARD 1 -->
+    <div class="product-card">
+      <img src="coffret-cafe-degustation-779999.jpg" alt="Pack Classique">
+      <h3>Pack Classique</h3>
+      <p class="reviews">★★★★★ 68 avis</p>
+      <p class="desc">5 variétés – 200 capsules de fromage</p>
+      <p class="price"><span class="new">29,90 €</span></p>
+      <button class="add">+</button>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="product-card">
+      <img src="coffret-cafe-degustation-448624.jpg" alt="Pack Premium">
+      <h3>Pack Premium</h3>
+      <p class="reviews">★★★★★ 112 avis</p>
+      <p class="desc">Sélection affinée – goût intense et texture fondante</p>
+      <p class="price"><span class="new">44,90 €</span></p>
+      <button class="add">+</button>
+    </div>
+
+    <!-- CARD 3 -->
+    <div class="product-card">
+      <span class="tag new">NOUVEAUTÉ</span>
+      <img src="fckk.jpg" alt="Pack Gourmet">
+      <h3>Pack Gourmet</h3>
+      <p class="reviews">★★★★★ 71 avis</p>
+      <p class="desc">Capsules de fromage, truffe et fines herbes</p>
+      <p class="price"><span class="new">59,90 €</span></p>
+      <button class="add">+</button>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="product-card">
+      <img src="550x550.jpg" alt="Pack Luxe">
+      <h3>Pack Luxe</h3>
+      <p class="reviews">★★★★★ 1388 avis</p>
+      <p class="desc">Assortiment rare de fromages fondus d’exception</p>
+      <p class="price"><span class="new">79,90 €</span></p>
+      <button class="add">+</button>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- Featured Product - Pumpkin Spice -->
+<section class="featured-product">
+<div class="product-info">
+    <h2>Pack instant fondu</h2>
+    <div class="features">
+        <div class="feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2zm0 18c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8z"/></svg>
+            <span>10 capsules</span>
+        </div>
+        <div class="feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L9 12H3l5 4-2 6 6-4 6 4-2-6 5-4h-6z"/></svg>
+            <span>Mélange chaleureux de figue, clou de girofle et anis étoilé</span>
+        </div>
+        <div class="feature">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M2 12h4v8H2v-8zm6-8h4v16H8V4zm6 4h4v12h-4V8zm6-4h4v16h-4V4z"/></svg>
+            <span>Compatibles avec les machines capsulait</span>
+        </div>
+    </div>
+    <button class="btn-gold">Ajouter au panier →</button>
+</div>
+<div class="product-image">
+    <img src="raaaaaaaaaaaaaa.png">
+</div>
+</section>
+
+
+
+
+
+
+<style>
+    .products-section {
+        padding: 50px 5%;
+    }
+
+
+
+    .products-grid {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .product-card {
+        background: #111;
+        border-radius: 12px;
+        padding: 20px;
+        text-align: left;
+        position: relative;
+    }
+
+    .product-card img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+
+    .tag {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: #ffd000;
+        color: #000;
+        padding: 4px 8px;
+        border-radius: 5px;
+
+    }
+
+    .tag.new {
+        background: #ff6a00;
+        color: #fff;
+    }
+
+
+
+    .reviews {
+        font-size: 0.9rem;
+        color: #ffd000;
+    }
+
+    .desc {
+        font-size: 0.9rem;
+        color: #bdbdbd;
+    }
+
+    .price {
+        margin-top: 10px;
+        font-size: 1.1rem;
+    }
+
+    .price .old {
+        text-decoration: line-through;
+        color: #888;
+        margin-right: 8px;
+    }
+
+    .price .new {
+        color: #ffd000;
+        font-weight: bold;
+    }
+
+    .add {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+        width: 32px;
+        height: 32px;
+        border: none;
+        background: #ffd000;
+        color: #000;
+        border-radius: 50%;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+</style>
+
+
+
+
+
+    <!-- Latest Creations -->
+    <section class="latest-creations">
+        <h2>Découvrez nos dernières créations</h2>
+        <p class="subtitle">Envie de nouveauté ? Des éditions saisonnières aux mélanges uniques, explorez ce qu'Instant fondu vous réserve.</p>
+        <div class="products-carousel">
+            <div class="product-card">
+                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); height: 240px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border-radius: 8px;">
+                    <img src="capsule-decafeine.png">
+                </div>
+                <h3>CapsuMozz : Mozzarella douce et crémeuse</h3>
+                <div class="rating">★★★★★ <span>68 avis</span></div>
+                <p class="product-desc">6 capsules</p>
+                <div class="price">
+                    <span class="new-price">14.99 €</span>
+                </div>
+                <button class="btn-add">+</button>
+            </div>
+            <div class="product-card">
+                <span class="badge discount">-25 %</span>
+                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); height: 240px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border-radius: 8px;">
+                    <img src="capsule-expresso.png">
+                </div>
+                <h3>CapsuChèvre : Fromage de chèvre frais et léger </h3>
+                <p class="product-desc">6 capsules</p>
+                <div class="price">
+                    <span class="old-price">14.99 €</span>
+                    <span class="new-price">9.99 €</span>
+                </div>
+                <button class="btn-add">+</button>
+            </div>
+            <div class="product-card">
+                <span class="badge new">NOUVEAUTÉ</span>
+                <div style="background: linear-gradient(135deg, #d4bb8e 0%, #b8a07a 100%); height: 240px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border-radius: 8px;">
+                    <img src="pngtree-coffee-capsules-color-png-image_9979192.png">
+                </div>
+                <h3>CapsuBurrata : Coeur crémeux , parfait pour les salades</h3>
+                <div class="rating">★★★★★ <span>71 avis</span></div>
+                <p class="product-desc">6 capsules</p>
+                <div class="price">
+                    <span class="new-price">14.99€</span>
+                </div>
+                <button class="btn-add">+</button>
+            </div>
+        </div>
+        <div class="products-carousel" style="margin-top:100px;">
+            <div class="product-card">
+                <span class="badge discount">-30 %</span>
+                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); height: 240px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border-radius: 8px;">
+                    <img src="capsule-rouges-4moka.png">
+                </div>
+                <h3>CapsuBleu : Fromage bleu pour les amateurs de saveur fortes</h3>
+                <div class="rating">★★★★★ <span>68 avis</span></div>
+                <p class="product-desc">6 capsules</p>
+                <div class="price">
+                    <span class="old-price">14.99 €</span>
+                    <span class="new-price">9.99 €</span>
+                </div>
+                <button class="btn-add">+</button>
+            </div>
+            <div class="product-card">
+                <span class="badge discount">-25 %</span>
+                <div style="background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%); height: 240px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border-radius: 8px;">
+                    <img src="capsule-marron-lungo.png">
+                </div>
+                <h3>CapsuKids : Gouda moelleux et onctueux</h3>
+                <p class="product-desc">6 capsules</p>
+                <div class="price">
+                    <span class="old-price">14.99€</span>
+                    <span class="new-price">9.99€</span>
+                </div>
+                <button class="btn-add">+</button>
+            </div>
+            <div class="product-card">
+                <span class="badge new">NOUVEAUTÉ</span>
+                <div style="background: linear-gradient(135deg, #d4bb8e 0%, #b8a07a 100%); height: 240px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; border-radius: 8px;">
+                    <img src="capsule-expresso.png">
+                </div>
+                <h3>Capsusaveurs : Fromage frais et délicat enrobé d'herbe de Provence et de poivre moulu</h3>
+                <div class="rating">★★★★★ <span>71 avis</span></div>
+                <p class="product-desc">6 capsules</p>
+                <div class="price">
+                    <span class="new-price">14.99 €</span>
+                </div>
+                <button class="btn-add">+</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sustainability Section -->
+    <section class="sustainability">
+        <h2>Découvrez-en plus derrière chaque capsule</h2>
+        <div class="sustainability-grid">
+            <div class="sustainability-card">
+                <img src="rubon280.jpg" alt="Durabilité">
+                <span class="label">Tradition</span>
+                <h3>Tradition modernisé : Respect des savoir-faire fromagers avec une touche d'innovation</h3>
+            </div>
+            <div class="sustainability-card">
+                <img src="cafe-bio-120-capsules-home-compost-zero-dechet-type-nespresso-ines-.jpg" alt="Recyclage">
+                <span class="label">Recyclage</span>
+                <h3>Eco-responsabilité : Capsules biodégradable et optimisation des portions pour eviter le gaspillage</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Section -->
+    <section class="blog-section">
+        <div class="blog-images">
+            <img src="imagen_exp.jpg" alt="instant-fondu">
+            <img src="fondue-savoyarde-1200.jpg" alt="Machine Capsulait">
+        </div>
+        <div class="blog-content">
+            <h2>Plongez au cœur de l'univers Capsulait</h2>
+            <p>Laissez-vous inspirer par nos articles mêlant recettes originales, conseils de nos Baristas et pour tout savoir sur notre savoir-faire. Découvrez comment nous élaborons nos mélanges et œuvrons chaque jour pour un avenir plus durable.</p>
+            <button class="btn-gold">Inspirez-Vous →</button>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <h2>Abonnez-vous à la newsletter</h2>
+        <p>Et bénéficiez d'une remise allant jusqu'à 30%* sur votre prochaine commande</p>
+        <button class="btn-outline">Je m'abonne</button>
+    </section>
+
+
+</head>
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-top">
+            <div class="footer-logo">
+                <span class="lor-logo">Instant fondu</span>
+            </div>
+            <div class="payment-methods">
+                <svg width="50" height="32" viewBox="0 0 50 32" fill="none"><rect width="50" height="32" rx="4" fill="#252525"/><circle cx="19" cy="16" r="8" fill="#EB001B"/><circle cx="31" cy="16" r="8" fill="#F79E1B"/><path d="M25 9.5C26.7 11 27.8 13.3 27.8 16C27.8 18.7 26.7 21 25 22.5C23.3 21 22.2 18.7 22.2 16C22.2 13.3 23.3 11 25 9.5Z" fill="#FF5F00"/></svg>
+                <svg width="50" height="32" viewBox="0 0 50 32" fill="none"><rect width="50" height="32" rx="4" fill="#1A1F71"/><path d="M20 11h-4l-3 10h4l3-10zm7 0l-3 10h4l2-6 1 6h3l-1-10h-6zm8 4c0-2-2-4-5-4h-4l-1 3h4c1 0 2 1 2 2s-1 2-2 2h-2l-1 3h3c3 0 6-2 6-6z" fill="#fff"/></svg>
+                <svg width="50" height="32" viewBox="0 0 50 32" fill="none"><rect width="50" height="32" rx="4" fill="#016FD0"/><path d="M18 16h14M18 13h10M18 19h10" stroke="white" stroke-width="2"/></svg>
+                <svg width="50" height="32" viewBox="0 0 50 32" fill="none"><rect width="50" height="32" rx="4" fill="#003087"/><path d="M20 10h-4c-1 0-2 1-2 2v8c0 1 1 2 2 2h4c3 0 5-2 5-6s-2-6-5-6zm11 0c-2 0-3 1-4 2l-1-2h-3v12h3v-7c1-1 2-2 3-2 1 0 2 1 2 2v7h3v-8c0-2-1-4-3-4z" fill="#009CDE"/><path d="M20 10h-4c-1 0-2 1-2 2v8c0 1 1 2 2 2h4c3 0 5-2 5-6s-2-6-5-6z" fill="#012169"/></svg>
+            </div>
+        </div>
+
+        <div class="footer-links">
+            <div class="footer-column">
+
+            </div>
+            <div class="footer-column">
+                <h3>QUI SOMMES-NOUS</h3>
+                <ul>
+                    <li><a href="#">Notre histoire</a></li>
+                    <li><a href="#">L'art de la fabrication</a></li>
+                    <li><a href="#">Recyclage</a></li>
+                    <li><a href="#">Machine à fromage</a></li>
+                    <li><a href="#">Instant fondu la boutique</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>SUPPORT</h3>
+                <ul>
+                    <li><a href="#">Assistance support</a></li>
+                    <li><a href="#">Utilisation machine</a></li>
+                    <li><a href="#">Nettoyage</a></li>
+                    <li><a href="#">Dépannage</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>AIDE ET ASSISTANCE</h3>
+                <ul>
+                    <li><a href="#">Contact/Aide</a></li>
+                    <li><a href="#">Questions fréquentes</a></li>
+                    <li><a href="#">Compatibilité</a></li>
+                    <li><a href="#">Conditions de promotion</a></li>
+                    <li><a href="#">Livraison et retours</a></li>
+                    <li><a href="#">Gérer vos cookies</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>Tous les prix incluent la TVA et excluent tous les frais (de livraison) supplémentaires.</p>
+            <p>© j'aurai pu faire mieux sah mais bon pas le temps</p>
+            <div class="footer-bottom-links">
+                <a href="#">Conditions générales</a>
+                <a href="#">Conditions d'utilisation</a>
+                <a href="#">Politique de confidentialité</a>
+                <a href="#">Informations commerciales</a>
+            </div>
+            <div class="language-selector">
+                <span>🇫🇷 France - Français</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Cookie Modal Management
+        function closeCookieModal() {
+            const modal = document.getElementById('cookieModal');
+            modal.style.display = 'none';
+        }
+
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            closeCookieModal();
+        }
+
+        // Check if cookies were already accepted
+        window.addEventListener('DOMContentLoaded', () => {
+            const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+            if (cookiesAccepted === 'true') {
+                closeCookieModal();
+            }
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Intersection Observer for scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -100px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animations to sections
+        window.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+            sections.forEach(section => {
+                section.style.opacity = '0';
+                section.style.transform = 'translateY(30px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                observer.observe(section);
+            });
+        });
+
+        // Product card hover effects
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.boxShadow = '0 20px 60px rgba(212, 187, 142, 0.2)';
+            });
+
+            card.addEventListener('mouseleave', function() {
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Category card animations
+        const categoryCards = document.querySelectorAll('.category-card');
+        categoryCards.forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const img = this.querySelector('img');
+                if (img) {
+                    img.style.transform = 'scale(1.1)';
+                    img.style.transition = 'transform 0.5s ease';
+                }
+            });
+
+            card.addEventListener('mouseleave', function() {
+                const img = this.querySelector('img');
+                if (img) {
+                    img.style.transform = 'scale(1)';
+                }
+            });
+        });
+
+        // Sticky navigation enhancement
+        let lastScroll = 0;
+        const nav = document.querySelector('.nav');
+
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll > lastScroll && currentScroll > 100) {
+                nav.style.transform = 'translateY(-100%)';
+            } else {
+                nav.style.transform = 'translateY(0)';
+            }
+
+            lastScroll = currentScroll;
+        });
+
+        // Add to cart button animation
+        const addButtons = document.querySelectorAll('.btn-add');
+        addButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                // Create ripple effect
+                const ripple = document.createElement('span');
+                ripple.style.position = 'absolute';
+                ripple.style.width = '10px';
+                ripple.style.height = '10px';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.6)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s ease-out';
+
+                this.appendChild(ripple);
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+
+                // Show success message
+                const originalText = this.textContent;
+                this.textContent = '✓';
+                this.style.background = '#4CAF50';
+
+                setTimeout(() => {
+                    this.textContent = originalText;
+                    this.style.background = '';
+                }, 1500);
+            });
+        });
+
+        // Add ripple animation style
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-bar input');
+        if (searchInput) {
+            searchInput.addEventListener('focus', function() {
+                this.parentElement.style.boxShadow = '0 0 0 2px rgba(212, 187, 142, 0.3)';
+            });
+
+            searchInput.addEventListener('blur', function() {
+                this.parentElement.style.boxShadow = 'none';
+            });
+        }
+
+        // Mobile menu toggle (if needed)
+        function toggleMobileMenu() {
+            const nav = document.querySelector('.nav-container');
+            nav.classList.toggle('mobile-open');
+        }
+
+        // Parallax effect for hero section
+        window.addEventListener('scroll', () => {
+            const heroImage = document.querySelector('.hero-image');
+            if (heroImage) {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * 0.3;
+                heroImage.style.transform = `translateY(${rate}px)`;
+            }
+        });
+
+        // Newsletter form handling
+        const newsletterBtn = document.querySelector('.newsletter .btn-outline');
+        if (newsletterBtn) {
+            newsletterBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Merci de votre intérêt ! La fonction newsletter sera disponible prochainement.');
+            });
+        }
+
+        // Lazy loading for images
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.add('loaded');
+                        imageObserver.unobserve(img);
+                    }
+                });
+            });
+
+            const images = document.querySelectorAll('img[data-src]');
+            images.forEach(img => imageObserver.observe(img));
+        }
+
+        // Console welcome message
+        console.log('%c Bienvenue sur L\'OR Espresso ', 'background: #d4bb8e; color: #0a0a0a; font-size: 16px; padding: 10px; font-weight: bold;');
+        console.log('%c Découvrez notre sélection premium de fromage ', 'color: #d4bb8e; font-size: 14px;');
+    </script>
+    <script>
+        const http = require('http');
+        const fs = require('fs');
+        const path = require('path');
+
+        const PORT = 8000;
+
+        const mimeTypes = {
+            '.html': 'text/html',
+            '.css': 'text/css',
+            '.js': 'application/javascript',
+            '.json': 'application/json',
+            '.png': 'image/png',
+            '.jpg': 'image/jpeg',
+            '.gif': 'image/gif',
+            '.svg': 'image/svg+xml',
+            '.webp': 'image/webp',
+            '.woff': 'font/woff',
+            '.woff2': 'font/woff2',
+            '.ttf': 'font/ttf'
+        };
+
+        const server = http.createServer((req, res) => {
+            let filePath = '.' + req.url;
+            if (filePath === './') {
+                filePath = './index.html';
+            }
+
+            const extname = String(path.extname(filePath)).toLowerCase();
+            const contentType = mimeTypes[extname] || 'application/octet-stream';
+
+            fs.readFile(filePath, (error, content) => {
+                if (error) {
+                    if(error.code == 'ENOENT') {
+                        res.writeHead(404, { 'Content-Type': 'text/html' });
+                        res.end('<h1>404 Not Found</h1>', 'utf-8');
+                    } else {
+                        res.writeHead(500);
+                        res.end('Server Error: ' + error.code);
+                    }
+                } else {
+                    res.writeHead(200, { 'Content-Type': contentType });
+                    res.end(content, 'utf-8');
+                }
+            });
+        });
+
+        server.listen(PORT, '0.0.0.0', () => {
+            console.log(`Server running at http://0.0.0.0:${PORT}/`);
+        });
+
+    </script>
+</body>
+</html>
